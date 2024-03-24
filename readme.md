@@ -1,39 +1,17 @@
-# quest-template
+# Welcome to the Anythink Market repo (powered by [Wilco](https://www.trywilco.com))
 
-## Quest Details 
-#### title: 
-#### level: 
-#### skills:
-#### dependencies: 
+To start the app use Docker. It will start both frontend and backend, including all the relevant dependencies, and the db.
 
+Please find more info about each part in the relevant Readme file ([frontend](frontend/readme.md) and [backend](backend/README.md)).
 
-## Overview 
-Explain what the quest is about and describe the main task the user needs to perform in this quest. 
+## Development
 
+When implementing a new feature or fixing a bug, please create a new pull request against `main` from a feature/bug branch and add `@vanessa-cooper` as reviewer.
 
-## Outline
-Describe each step in the quest. 
-- Step 1 [step id]: 
-- Step 2 [step id]:
-- ...
+## How to run in dev mode?
 
+### Using Codespace
+1.  run `docker compose up`
 
-## Textbook solution
-For each step, describe all actions the user needs to perform to complete the step, including links to PRs as they would need to be written to pass checks. 
-Before submitting your quest for review, test your quest in snack and check the instructions you wrote. Make sure that by following these instructions, you are able to successfully complete the quest.  
-### Instructions for completing the quest: 
-#### Step 1 [step id]: 
-- Learning Objective:
-- Narrative:
-- Instructions: 
-- How do users pass to the next step: 
-- Hints:
-
- 
-#### Step 2 [step id]:
-- Learning Objective:
-- Narrative:
-- Instructions: 
-- How do users pass to the next step: 
-- Hints:
-...
+## Tests
+Documentation about running the End to End test can be found under the `/tests` directory
