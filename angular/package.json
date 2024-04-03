@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "nx",
     "nx": "nx",
-    "start": "nx run conduit:serve --port=${PORT}",
+    "start": "nx run conduit:serve --port=${PORT} --host 0.0.0.0 --disable-host-check",
     "build": "ng build",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
