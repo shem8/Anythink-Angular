@@ -16,19 +16,10 @@
         "outputPath": "dist/apps/conduit",
         "index": "apps/conduit/src/index.html",
         "main": "apps/conduit/src/main.ts",
-        "polyfills": [
-          "zone.js",
-          "apps/conduit/src/polyfills.ts"
-        ],
+        "polyfills": ["zone.js", "apps/conduit/src/polyfills.ts"],
         "tsConfig": "apps/conduit/tsconfig.app.json",
-        "assets": [
-          "apps/conduit/src/favicon.ico",
-          "apps/conduit/src/assets",
-          "apps/conduit/src/netlify.toml"
-        ],
-        "styles": [
-          "apps/conduit/src/styles.scss"
-        ],
+        "assets": ["apps/conduit/src/favicon.ico", "apps/conduit/src/assets", "apps/conduit/src/netlify.toml"],
+        "styles": ["apps/conduit/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -68,9 +59,7 @@
           "namedChunks": true
         }
       },
-      "outputs": [
-        "{options.outputPath}"
-      ]
+      "outputs": ["{options.outputPath}"]
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
@@ -92,9 +81,7 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint",
-      "outputs": [
-        "{options.outputFile}"
-      ]
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
       "executor": "@nx/jest:jest",
@@ -102,9 +89,7 @@
         "jestConfig": "apps/conduit/jest.config.ts",
         "passWithNoTests": true
       },
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/conduit"
-      ]
+      "outputs": ["{workspaceRoot}/coverage/apps/conduit"]
     }
   }
 }
