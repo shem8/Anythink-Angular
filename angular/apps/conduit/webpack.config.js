@@ -1,12 +1,7 @@
 const webpack = require('webpack');
 
 function getClientEnvironment() {
-  // Grab NX_* environment variables and prepare them to be injected
-  // into the application via DefinePlugin in webpack configuration.
-  const NX_APP = /^NX_/i;
-
   const raw = Object.keys(process.env)
-    .filter((key) => NX_APP.test(key))
     .reduce((env, key) => {
       env[key] = process.env[key];
       return env;

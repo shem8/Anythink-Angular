@@ -60,6 +60,6 @@ export const appConfig: ApplicationConfig = {
     provideRouterStore(),
     provideHttpClient(withInterceptors([errorHandlingInterceptor, tokenInterceptor])),
     !environment.production ? provideStoreDevtools() : [],
-    { provide: API_URL, useValue: process.env.API_URL },
+    { provide: API_URL, useValue: process.env['BACKEND_URL'] },
   ],
 };
