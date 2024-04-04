@@ -1,11 +1,10 @@
 const webpack = require('webpack');
 
 function getClientEnvironment() {
-  const raw = Object.keys(process.env)
-    .reduce((env, key) => {
-      env[key] = process.env[key];
-      return env;
-    }, {});
+  const raw = Object.keys(process.env).reduce((env, key) => {
+    env[key] = process.env[key];
+    return env;
+  }, {});
 
   // Stringify all values so we can feed into webpack DefinePlugin
   return {
