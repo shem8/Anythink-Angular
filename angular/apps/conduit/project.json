@@ -19,7 +19,7 @@
         "polyfills": ["zone.js"],
         "tsConfig": "apps/conduit/tsconfig.app.json",
         "assets": ["apps/conduit/src/favicon.ico", "apps/conduit/src/assets", "apps/conduit/src/netlify.toml"],
-        "styles": ["apps/conduit/src/styles.scss"],
+        "styles": ["apps/conduit/src/scss/styles.scss"],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/conduit/webpack.config.js"
