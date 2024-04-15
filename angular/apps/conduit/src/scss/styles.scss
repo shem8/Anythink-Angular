@@ -20,7 +20,7 @@ html {
 $headings-font-family:   'Merriweather Sans', sans-serif;
 $font-family-sans-serif: 'Source Sans Pro', sans-serif;
 $brand-primary: #2b1456;
-$brand-danger:  #ff2b98;
+$brand-secondary:  #ff2b98;
 
 $body-color: white; //this is the text color
 $body-bg: $brand-primary;
@@ -33,7 +33,8 @@ $input-border-color: #d0d0d0;
 $font-family-base: "Poppins", sans-serif !important;
 
 $theme-colors: (
-  "light-gray": #f2f2f2,
+  "primary":    $brand-primary,
+  "secondary":  $brand-secondary,
 );
 
 body {
@@ -42,15 +43,6 @@ body {
   background-repeat: no-repeat;
 }
 
-// Set the navbar's logo to the conduit logo font & large size
-.navbar-brand {
-  font-family: $font-family-logo;
-  font-size:1.5rem !important;
-  padding-top:0rem !important;
-  margin-right:2rem !important;
-  color:$brand-primary !important;
-  // margin-bottom:40px;
-}
 // set a smooth transition for nav-link hover effects
 .nav-link:hover {
   transition: 0.1s all;
@@ -97,7 +89,7 @@ footer {
 
 // general error handling style
 .error-messages {
-  color: $brand-danger !important;
+  color: $brand-secondary !important;
   font-weight:bold;
 }
 
@@ -188,5 +180,4 @@ footer {
 @import 'post.scss';
 @import 'profile.scss';
 @import 'editor.scss';
-
 @import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
