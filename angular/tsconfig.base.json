@@ -19,18 +19,6 @@
       "@default/*": ["apps/conduit/src/app/*"],
       "@env/*": ["apps/conduit/src/environments/*"],
       "@realworld/*": ["libs/*"],
-      "@realworld/items/item": [
-        "libs/items/feature-item/src/index.ts"
-      ],
-      "@realworld/items/item-edit": [
-        "libs/items/feature-item-edit/src/index.ts"
-      ],
-      "@realworld/items/items-list": [
-        "libs/items/feature-items-list/src/index.ts"
-      ],
-      "@realworld/items/data-access": [
-        "libs/items/data-access/src/index.ts"
-      ],
       "@realworld/auth/data-access": ["libs/auth/data-access/src/index.ts"],
       "@realworld/auth/feature-auth": ["libs/auth/feature-auth/src/index.ts"],
       "@realworld/core/api-types": ["libs/core/api-types/src/index.ts"],
@@ -38,6 +26,14 @@
       "@realworld/core/error-handler": ["libs/core/error-handler/src/index.ts"],
       "@realworld/core/forms": ["libs/core/forms/src/index.ts"],
       "@realworld/core/http-client": ["libs/core/http-client/src/index.ts"],
+      "@realworld/items/data-access": ["libs/items/data-access/src/index.ts"],
+      "@realworld/items/item": ["libs/items/feature-item/src/index.ts"],
+      "@realworld/items/item-edit": [
+        "libs/items/feature-item-edit/src/index.ts"
+      ],
+      "@realworld/items/items-list": [
+        "libs/items/feature-items-list/src/index.ts"
+      ],
       "@realworld/profile/data-access": [
         "libs/profile/data-access/src/index.ts"
       ],

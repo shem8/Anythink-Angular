@@ -29,9 +29,7 @@ export class ItemsService {
   }
 
   deleteComment(commentId: number, slug: string): Observable<void> {
-    return this.apiService.delete<void>(
-      `/items/${slug}/comments/${commentId}`,
-    );
+    return this.apiService.delete<void>(`/items/${slug}/comments/${commentId}`);
   }
 
   addComment(slug: string, payload = ""): Observable<SingleCommentResponse> {
@@ -61,10 +59,9 @@ export class ItemsService {
         },
       );
     }
-    return this.apiService.post<ItemResponse, ItemResponse>(
-      "/items/",
-      { item: item },
-    );
+    return this.apiService.post<ItemResponse, ItemResponse>("/items/", {
+      item: item,
+    });
   }
 
   // TODO: remove any

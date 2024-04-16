@@ -7,12 +7,9 @@ beforeEach(() => {
   userId = generateRandomString();
 });
 
-Given(
-  "I am logged in to the system so I can test the items list page",
-  () => {
-    cy.loginApi(userId);
-  },
-);
+Given("I am logged in to the system so I can test the items list page", () => {
+  cy.loginApi(userId);
+});
 
 When("I am on Home page", () => {
   cy.visit("/");

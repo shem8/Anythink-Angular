@@ -9,10 +9,7 @@ import {
   inject,
   input,
 } from "@angular/core";
-import {
-  ItemStore,
-  ItemsListStore,
-} from "@realworld/items/data-access";
+import { ItemStore, ItemsListStore } from "@realworld/items/data-access";
 import { ItemMetaComponent } from "./item-meta/item-meta.component";
 import { AsyncPipe } from "@angular/common";
 import { MarkdownPipe } from "./pipes/markdown.pipe";

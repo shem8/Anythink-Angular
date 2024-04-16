@@ -137,8 +137,7 @@ export const ItemStore = signalStore(
           switchMap(([_, data]) =>
             itemsService.publishItem(data).pipe(
               tapResponse({
-                next: ({ item }) =>
-                  router.navigate(["item", item.slug]),
+                next: ({ item }) => router.navigate(["item", item.slug]),
                 error: ({ error }) =>
                   reduxStore.dispatch(
                     formsActions.setErrors({ errors: error.errors }),

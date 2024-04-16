@@ -7,9 +7,7 @@
   "targets": {
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/libs/items/feature-items-list"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/libs/items/feature-items-list"],
       "options": {
         "jestConfig": "libs/items/feature-items-list/jest.config.ts",
         "passWithNoTests": true

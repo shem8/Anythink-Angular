@@ -26,8 +26,6 @@ export class ActionsService {
   }
 
   unfavorite(slug: string): Observable<ItemResponse> {
-    return this.apiService.delete<ItemResponse>(
-      "/items/" + slug + "/favorite",
-    );
+    return this.apiService.delete<ItemResponse>("/items/" + slug + "/favorite");
   }
 }

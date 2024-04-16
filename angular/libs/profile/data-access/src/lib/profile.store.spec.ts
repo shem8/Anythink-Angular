@@ -12,10 +12,7 @@ describe("ItemStore", () => {
     });
   });
 
-  it("should be created", inject(
-    [ItemStore],
-    (service: typeof ItemStore) => {
-      expect(service).toBeTruthy();
-    },
-  ));
+  it("should be created", inject([ItemStore], (service: typeof ItemStore) => {
+    expect(service).toBeTruthy();
+  }));
 });

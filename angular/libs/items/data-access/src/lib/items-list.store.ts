@@ -31,9 +31,7 @@ export const ItemsListStore = signalStore(
     totalPages: computed(() =>
       Array.from(
         new Array(
-          Math.ceil(
-            items().itemsCount / (listConfig()?.filters?.limit ?? 1),
-          ),
+          Math.ceil(items().itemsCount / (listConfig()?.filters?.limit ?? 1)),
         ),
         (_, index) => index + 1,
       ),
@@ -128,9 +126,7 @@ export const ItemsListStore = signalStore(
 );
 
 function replaceItem(items: Items, payload: Item): Items {
-  const itemIndex = items.entities.findIndex(
-    (a) => a.slug === payload.slug,
-  );
+  const itemIndex = items.entities.findIndex((a) => a.slug === payload.slug);
   const entities = [
     ...items.entities.slice(0, itemIndex),
     Object.assign({}, items.entities[itemIndex], payload),

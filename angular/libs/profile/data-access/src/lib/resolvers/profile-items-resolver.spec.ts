@@ -27,8 +27,7 @@ describe("profileItemsResolver", () => {
     const dispatchSpy = jest.spyOn(store, "dispatch");
 
     const result = TestBed.runInInjectionContext(
-      () =>
-        profileItemsResolver(mockRoute, {} as RouterStateSnapshot) as any,
+      () => profileItemsResolver(mockRoute, {} as RouterStateSnapshot) as any,
     );
     expect(dispatchSpy).toHaveBeenCalledWith(
       itemListActions.setListConfig({
