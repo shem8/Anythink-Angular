@@ -15,7 +15,7 @@ Make sure your server is up and running to serve requests.
 - Sign in/Sign up pages (URL: /#/login, /#/register )
   - Use JWT (store the token in localStorage)
 - Settings page (URL: /#/settings )
-- Editor page to create/edit articles (URL: /#/editor, /#/editor/slug )
+- Editor page to create/edit items (URL: /#/editor, /#/editor/slug )
 - Item page (URL: /#/item/slug )
   - Delete item button (only shown to item's author)
   - Render markdown from server client side

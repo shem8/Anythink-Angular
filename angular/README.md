@@ -1,6 +1,6 @@
 # ![RealWorld Example App](logo.png)
 
-### This project is already migrated to Angular v17 and to the new Control Flow and Deferred Loading. I'm also migrating it from NgRx Store to NgRx Signal Store. The [Auth library](https://github.com/stefanoslig/angular-ngrx-nx-realworld-example-app/blob/main/libs/auth/data-access/src/lib/auth.store.ts), the [Article library](https://github.com/stefanoslig/angular-ngrx-nx-realworld-example-app/blob/main/libs/articles/data-access/src/lib/article.store.ts) and the [Profile library](https://github.com/stefanoslig/angular-ngrx-nx-realworld-example-app/blob/main/libs/profile/data-access/src/lib/profile.store.ts) have already migrated. You can already have a look.
+### This project is already migrated to Angular v17 and to the new Control Flow and Deferred Loading. I'm also migrating it from NgRx Store to NgRx Signal Store. The [Auth library](https://github.com/stefanoslig/angular-ngrx-nx-realworld-example-app/blob/main/libs/auth/data-access/src/lib/auth.store.ts), the [Item library](https://github.com/stefanoslig/angular-ngrx-nx-realworld-example-app/blob/main/libs/items/data-access/src/lib/item.store.ts) and the [Profile library](https://github.com/stefanoslig/angular-ngrx-nx-realworld-example-app/blob/main/libs/profile/data-access/src/lib/profile.store.ts) have already migrated. You can already have a look.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b9997c1f-ca8f-456e-aaf6-016ce13c353e/deploy-status)](https://app.netlify.com/sites/angular-ngrx-nx/deploys)
 
@@ -22,31 +22,31 @@ The example application is a social blogging site (i.e. a Medium.com clone) call
 
 - Authenticate users via JWT (login/signup pages + logout button on settings page)
 - CRU\* users (sign up & settings page - no deleting required)
-- CRUD Articles
-- CR\*D Comments on articles (no updating required)
-- GET and display paginated lists of articles
-- Favorite articles
+- CRUD Items
+- CR\*D Comments on items (no updating required)
+- GET and display paginated lists of items
+- Favorite items
 - Follow other users
 
 **The general page breakdown looks like this:**
 
 - Home page (URL: /#/ )
   - List of tags
-  - List of articles pulled from either Feed, Global, or by Tag
-  - Pagination for list of articles
+  - List of items pulled from either Feed, Global, or by Tag
+  - Pagination for list of items
 - Sign in/Sign up pages (URL: /#/login, /#/register )
   - Uses JWT (store the token in localStorage)
   - Authentication can be easily switched to session/cookie based
 - Settings page (URL: /#/settings )
-- Editor page to create/edit articles (URL: /#/editor, /#/editor/article-slug-here )
-- Article page (URL: /#/article/article-slug-here )
-  - Delete article button (only shown to article's author)
+- Editor page to create/edit items (URL: /#/editor, /#/editor/item-slug-here )
+- Item page (URL: /#/item/item-slug-here )
+  - Delete item button (only shown to item's author)
   - Render markdown from server client side
   - Comments section at bottom of page
   - Delete comment button (only shown to comment's author)
 - Profile page (URL: /#/profile/:username, /#/profile/:username/favorites )
   - Show basic user info
-  - List of articles populated from author's created articles or author's favorited articles
+  - List of items populated from author's created items or author's favorited items
 
 ## Commands
 
@@ -72,11 +72,11 @@ The folder structure is:
 
 ```
 ├── libs
-│   ├── articles
+│   ├── items
 │   │   ├── data-access
-│   │   ├── feature-article-edit
-│   │   ├── feature-article
-│   │   ├── feature-articles-list
+│   │   ├── feature-item-edit
+│   │   ├── feature-item
+│   │   ├── feature-items-list
 │   ├── auth
 │   │   ├── data-access
 │   │   ├── feature-auth
@@ -125,8 +125,8 @@ As you can see from the route configuration, the two main pages in the app are l
   loadComponent: () => import('@realworld/auth/feature-auth').then((m) => m.RegisterComponent),
 },
 {
-  path: 'article',
-  loadChildren: () => import('@realworld/articles/article').then((m) => m.ARTICLE_ROUTES),
+  path: 'item',
+  loadChildren: () => import('@realworld/items/item').then((m) => m.ITEM_ROUTES),
 },
 {
   path: 'settings',
@@ -135,7 +135,7 @@ As you can see from the route configuration, the two main pages in the app are l
 },
 {
   path: 'editor',
-  loadChildren: () => import('@realworld/articles/article-edit').then((article) => article.ARTICLE_EDIT_ROUTES),
+  loadChildren: () => import('@realworld/items/item-edit').then((item) => item.ITEM_EDIT_ROUTES),
   canActivate: [authGuard],
 },
 {

@@ -2,7 +2,7 @@ import { patchState, signalStore, withMethods, withState } from "@ngrx/signals";
 import { setLoaded, withCallState } from "@realworld/core/data-access";
 import { rxMethod } from "@ngrx/signals/rxjs-interop";
 import { inject } from "@angular/core";
-import { ActionsService } from "@realworld/articles/data-access";
+import { ActionsService } from "@realworld/items/data-access";
 import { pipe, switchMap, tap } from "rxjs";
 import { ProfileService } from "./services/profile.service";
 import { tapResponse } from "@ngrx/component-store";

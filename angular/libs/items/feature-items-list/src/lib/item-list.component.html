@@ -1,0 +1,22 @@
+@if (!$isLoading()) {
+  @for (item of $items(); track item.slug) {
+    <cdt-item-list-item
+      data-e2e-id="item-list"
+      (navigateToItem)="navigateToItem($event)"
+      (unFavorite)="unFavorite($event)"
+      (favorite)="favorite($event)"
+      [item]="item"
+    >
+    </cdt-item-list-item>
+  } @empty {
+    <div>No items are here... yet.</div>
+  }
+
+  <cdt-pager
+    (setPage)="setPage($event)"
+    [currentPage]="$listConfig.currentPage()"
+    [totalPages]="$totalPages()"
+  ></cdt-pager>
+} @else {
+  <div>Loading items...</div>
+}

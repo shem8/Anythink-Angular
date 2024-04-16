@@ -6,13 +6,13 @@ import {
   untracked,
 } from "@angular/core";
 import {
-  ArticlesListStore,
+  ItemsListStore,
   ListType,
-  articlesListInitialState,
-} from "@realworld/articles/data-access";
+  itemsListInitialState,
+} from "@realworld/items/data-access";
 import { AsyncPipe, NgClass } from "@angular/common";
 import { TagsListComponent } from "./tags-list/tags-list.component";
-import { ArticleListComponent } from "@realworld/articles/feature-articles-list/src";
+import { ItemListComponent } from "@realworld/items/feature-items-list/src";
 import { HomeStoreService } from "./home.store";
 import { provideComponentStore } from "@ngrx/component-store";
 import { AuthStore } from "@realworld/auth/data-access";
@@ -22,33 +22,33 @@ import { AuthStore } from "@realworld/auth/data-access";
   standalone: true,
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.css"],
-  imports: [AsyncPipe, NgClass, TagsListComponent, ArticleListComponent],
+  imports: [AsyncPipe, NgClass, TagsListComponent, ItemListComponent],
   providers: [provideComponentStore(HomeStoreService)],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-  private readonly articlesListStore = inject(ArticlesListStore);
+  private readonly itemsListStore = inject(ItemsListStore);
   private readonly authStore = inject(AuthStore);
   private readonly homeStore = inject(HomeStoreService);
 
-  $listConfig = this.articlesListStore.listConfig;
+  $listConfig = this.itemsListStore.listConfig;
   tags$ = this.homeStore.tags$;
   $isLoggedIn = this.authStore.loggedIn;
 
   constructor() {
-    this.articlesListStore.loadArticles(this.$listConfig);
+    this.itemsListStore.loadItems(this.$listConfig);
   }
 
-  readonly loadArticlesOnLogin = effect(() => {
-    untracked(() => this.getArticles(this.$isLoggedIn()));
+  readonly loadItemsOnLogin = effect(() => {
+    untracked(() => this.getItems(this.$isLoggedIn()));
   });
 
   setListTo(type: ListType = "ALL") {
-    const config = { ...articlesListInitialState.listConfig, type };
-    this.articlesListStore.setListConfig(config);
+    const config = { ...itemsListInitialState.listConfig, type };
+    this.itemsListStore.setListConfig(config);
   }
 
-  getArticles(isLoggedIn: boolean) {
+  getItems(isLoggedIn: boolean) {
     if (isLoggedIn) {
       this.setListTo("FEED");
     } else {
@@ -57,10 +57,10 @@ export class HomeComponent {
   }
 
   setListTag(tag: string) {
-    this.articlesListStore.setListConfig({
-      ...articlesListInitialState.listConfig,
+    this.itemsListStore.setListConfig({
+      ...itemsListInitialState.listConfig,
       filters: {
-        ...articlesListInitialState.listConfig.filters,
+        ...itemsListInitialState.listConfig.filters,
         tag,
       },
     });

@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-xs-12 col-md-10 offset-md-1">
           <img [src]="$image()" class="user-img" />
-          <h4 data-e2e-id="article-author-profile" [hidden]="$profileLoading()">
+          <h4 data-e2e-id="item-author-profile" [hidden]="$profileLoading()">
             {{ $username() }}
           </h4>
           <p>{{ $bio() }}</p>
@@ -36,7 +36,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-10 offset-md-1">
-        <div class="articles-toggle">
+        <div class="items-toggle">
           <ul class="nav nav-pills outline-active">
             <li class="nav-item">
               <a
@@ -44,7 +44,7 @@
                 [routerLink]="['/profile', $username()]"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }"
-                >My Articles</a
+                >My Items</a
               >
             </li>
             <li class="nav-item">
@@ -53,7 +53,7 @@
                 [routerLink]="['/profile', $username(), 'favorites']"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }"
-                >Favorited Articles</a
+                >Favorited Items</a
               >
             </li>
           </ul>

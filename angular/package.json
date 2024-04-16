@@ -105,10 +105,10 @@
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
-      "src/e2e/article-list/**/*.ts",
+      "src/e2e/item-list/**/*.ts",
       "src/e2e/login/**/*.ts",
       "src/e2e/logout/**/*.ts",
-      "src/e2e/new-article/**/*.ts",
+      "src/e2e/new-item/**/*.ts",
       "src/e2e/register/**/*.ts",
       "src/e2e/settings/**/*.ts"
     ]

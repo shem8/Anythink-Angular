@@ -1,0 +1,23 @@
+{
+  "name": "items-feature-items-list",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/items/feature-items-list/src",
+  "prefix": "cdt",
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/libs/items/feature-items-list"
+      ],
+      "options": {
+        "jestConfig": "libs/items/feature-items-list/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  },
+  "tags": []
+}

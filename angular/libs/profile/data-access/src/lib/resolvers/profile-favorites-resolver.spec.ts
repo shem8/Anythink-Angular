@@ -4,9 +4,9 @@ import { profileFavoritesResolver } from "./profile-favorites-resolver";
 import { cold } from "jasmine-marbles";
 import { ActivatedRouteSnapshot, RouterStateSnapshot } from "@angular/router";
 import {
-  articleListActions,
-  articleListInitialState,
-} from "@realworld/articles/data-access";
+  itemListActions,
+  itemListInitialState,
+} from "@realworld/items/data-access";
 
 const mockRoute: ActivatedRouteSnapshot = {
   parent: { params: { username: "stef" } },
@@ -23,7 +23,7 @@ describe("profileFavoritesResolver", () => {
     store = TestBed.inject(MockStore);
   });
 
-  it("should return `true` and dispatch articleListActions.setListConfig action", () => {
+  it("should return `true` and dispatch itemListActions.setListConfig action", () => {
     const dispatchSpy = jest.spyOn(store, "dispatch");
 
     const result = TestBed.runInInjectionContext(
@@ -31,11 +31,11 @@ describe("profileFavoritesResolver", () => {
         profileFavoritesResolver(mockRoute, {} as RouterStateSnapshot) as any,
     );
     expect(dispatchSpy).toHaveBeenCalledWith(
-      articleListActions.setListConfig({
+      itemListActions.setListConfig({
         config: {
-          ...articleListInitialState.listConfig,
+          ...itemListInitialState.listConfig,
           filters: {
-            ...articleListInitialState.listConfig.filters,
+            ...itemListInitialState.listConfig.filters,
             favorited: "stef",
           },
         },

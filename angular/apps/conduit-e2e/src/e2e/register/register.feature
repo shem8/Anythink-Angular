@@ -2,7 +2,7 @@ Feature: Register
 
     As a user,
     I want to be able to create a new account,
-    so that I can use the application for publishing articles.
+    so that I can use the application for publishing items.
 
     Background: 
         Given I open Register page

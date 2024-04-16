@@ -22,7 +22,7 @@ services:
   anythink-frontend-angular:
     image: node:latest
     container_name: anythink-frontend-angular
-    command: sh -c "cd angular && yarn install && yarn start"
+    command: sh -c "rm -rf /tmp/3a21dc45d3005c5a4cb8/fp51.sock && cd angular && yarn install && yarn start"
     environment:
       - NODE_ENV=development
       - PORT=3001

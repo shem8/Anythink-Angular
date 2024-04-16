@@ -1,0 +1,42 @@
+<div class="item-preview">
+  <div class="item-meta">
+    <a>
+      <img [src]="item().author.image" />
+    </a>
+    <div class="info">
+      <a
+        data-e2e-id="item-author"
+        class="author"
+        [routerLink]="['/profile', item().author.username]"
+      >
+        {{ item().author.username }}
+      </a>
+      <span class="date">
+        {{ item().createdAt | date: "longDate" }}
+      </span>
+    </div>
+    <button
+      [ngClass]="{
+        'btn-outline-primary': item().favorited,
+        'btn-primary': item().favorited
+      }"
+      class="btn btn-sm pull-xs-right"
+      (click)="toggleFavorite(item())"
+    >
+      <i class="ion-heart"></i>
+      {{ item().favoritesCount }}
+    </button>
+  </div>
+  <a (click)="navigateToItem.emit(item().slug)" class="preview-link">
+    <h1 data-e2e-id="item-list-title">{{ item().title }}</h1>
+    <p>{{ item().description }}</p>
+    <span>Read more...</span>
+    <ul class="tag-list">
+      @for (tag of item().tagList; track tag) {
+        <li class="tag-default tag-pill tag-outline">
+          {{ tag }}
+        </li>
+      }
+    </ul>
+  </a>
+</div>

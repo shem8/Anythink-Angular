@@ -45,9 +45,9 @@ export const appConfig: ApplicationConfig = {
             ),
         },
         {
-          path: "article",
+          path: "item",
           loadChildren: () =>
-            import("@realworld/articles/article").then((m) => m.ARTICLE_ROUTES),
+            import("@realworld/items/item").then((m) => m.ITEM_ROUTES),
         },
         {
           path: "settings",
@@ -59,8 +59,8 @@ export const appConfig: ApplicationConfig = {
         {
           path: "editor",
           loadChildren: () =>
-            import("@realworld/articles/article-edit").then(
-              (article) => article.ARTICLE_EDIT_ROUTES,
+            import("@realworld/items/item-edit").then(
+              (item) => item.ITEM_EDIT_ROUTES,
             ),
           canActivate: [authGuard],
         },

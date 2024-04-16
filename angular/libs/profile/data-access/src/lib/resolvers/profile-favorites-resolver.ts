@@ -2,26 +2,26 @@ import { inject } from "@angular/core";
 import { ActivatedRouteSnapshot, ResolveFn } from "@angular/router";
 import { of } from "rxjs";
 import {
-  ArticlesListStore,
-  articlesListInitialState,
-} from "@realworld/articles/data-access";
+  ItemsListStore,
+  itemsListInitialState,
+} from "@realworld/items/data-access";
 
 export const profileFavoritesResolver: ResolveFn<boolean> = (
   route: ActivatedRouteSnapshot,
 ) => {
   const username = route?.parent?.params["username"];
-  const articlesListStore = inject(ArticlesListStore);
+  const itemsListStore = inject(ItemsListStore);
 
   const config = {
-    ...articlesListInitialState.listConfig,
+    ...itemsListInitialState.listConfig,
     filters: {
-      ...articlesListInitialState.listConfig.filters,
+      ...itemsListInitialState.listConfig.filters,
       favorited: username,
     },
   };
 
-  articlesListStore.setListConfig(config);
-  articlesListStore.loadArticles(config);
+  itemsListStore.setListConfig(config);
+  itemsListStore.loadItems(config);
 
   return of(true);
 };

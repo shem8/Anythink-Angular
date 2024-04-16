@@ -2,7 +2,7 @@ Feature: Login
 
     As a user, 
     I want to be able to login to the application only when I input valid credentials,
-    so that I can use the application to publish articles. 
+    so that I can use the application to publish items. 
 
     Background: 
         Given I am registered user

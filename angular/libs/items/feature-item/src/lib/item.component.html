@@ -1,0 +1,69 @@
+@if ($item(); as item) {
+  <div class="item-page">
+    <div class="banner">
+      <div class="container">
+        <h1 data-e2e-id="item-title">{{ item.title }}</h1>
+        <cdt-item-meta
+          [item]="item"
+          (follow)="follow($event)"
+          (unfollow)="unfollow($event)"
+          (favorite)="favorite($event)"
+          (unfavorite)="unfavorite($event)"
+          (delete)="delete($event)"
+          [canModify]="$canModify()"
+        >
+        </cdt-item-meta>
+      </div>
+    </div>
+
+    <div class="container page">
+      <div class="row item-content">
+        <div class="col-md-12">
+          <div [innerHTML]="item.body | markdown"></div>
+        </div>
+      </div>
+      <hr />
+      <div class="item-actions">
+        <cdt-item-meta
+          [item]="item"
+          (follow)="follow($event)"
+          (unfollow)="unfollow($event)"
+          (favorite)="favorite($event)"
+          (unfavorite)="unfavorite($event)"
+          (delete)="delete($event)"
+          [canModify]="$canModify()"
+        ></cdt-item-meta>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-8 offset-md-2">
+          @if ($isAuthenticated()) {
+            <cdt-add-comment
+              [item]="item"
+              [data$]="data$"
+              [structure$]="structure$"
+              [currentUser]="$currentUser()"
+              [touchedForm$]="touchedForm$"
+              (submitComment)="submit($event)"
+              (updateForm)="updateForm($event)"
+            >
+            </cdt-add-comment>
+          } @else {
+            <a [routerLink]="['/login']">Sign in</a> or
+            <a [routerLink]="['/register']">sign up</a> to add comments on this
+            item.
+          }
+
+          @for (comment of $comments(); track comment.id) {
+            <cdt-item-comment
+              [currentUser]="$currentUser()"
+              (delete)="deleteComment($event)"
+              [item]="item"
+              [comment]="comment"
+            ></cdt-item-comment>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+}

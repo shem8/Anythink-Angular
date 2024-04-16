@@ -1,8 +1,8 @@
 import { Routes } from "@angular/router";
-import { ArticleListComponent } from "@realworld/articles/feature-articles-list/src";
+import { ItemListComponent } from "@realworld/items/feature-items-list/src";
 import { authGuard } from "@realworld/auth/data-access";
 import {
-  profileArticlesResolver,
+  profileItemsResolver,
   profileFavoritesResolver,
   profileResolver,
 } from "@realworld/profile/data-access";
@@ -17,12 +17,12 @@ export const PROFILE_ROUTES: Routes = [
     children: [
       {
         path: "",
-        component: ArticleListComponent,
-        resolve: { profileArticlesResolver },
+        component: ItemListComponent,
+        resolve: { profileItemsResolver },
       },
       {
         path: "favorites",
-        component: ArticleListComponent,
+        component: ItemListComponent,
         resolve: { profileFavoritesResolver },
       },
     ],
