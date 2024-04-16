@@ -1,10 +1,10 @@
-import { ApiService } from '@realworld/core/http-client';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { inject, TestBed } from '@angular/core/testing';
-import { ArticlesService } from './articles.service';
-import { MockProvider } from 'ng-mocks';
+import { ApiService } from "@realworld/core/http-client";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { inject, TestBed } from "@angular/core/testing";
+import { ArticlesService } from "./articles.service";
+import { MockProvider } from "ng-mocks";
 
-describe('ArticlesService', () => {
+describe("ArticlesService", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
@@ -12,7 +12,10 @@ describe('ArticlesService', () => {
     });
   });
 
-  it('should be created', inject([ArticlesService], (service: ArticlesService) => {
-    expect(service).toBeTruthy();
-  }));
+  it("should be created", inject(
+    [ArticlesService],
+    (service: ArticlesService) => {
+      expect(service).toBeTruthy();
+    },
+  ));
 });

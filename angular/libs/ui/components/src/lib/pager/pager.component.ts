@@ -1,11 +1,16 @@
-import { NgClass } from '@angular/common';
-import { Component, ChangeDetectionStrategy, input, output } from '@angular/core';
+import { NgClass } from "@angular/common";
+import {
+  Component,
+  ChangeDetectionStrategy,
+  input,
+  output,
+} from "@angular/core";
 
 @Component({
   standalone: true,
-  selector: 'cdt-pager',
-  templateUrl: './pager.component.html',
-  styleUrls: ['./pager.component.css'],
+  selector: "cdt-pager",
+  templateUrl: "./pager.component.html",
+  styleUrls: ["./pager.component.css"],
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgClass],
 })

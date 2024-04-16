@@ -49,8 +49,9 @@
             >
             </cdt-add-comment>
           } @else {
-            <a [routerLink]="['/login']">Sign in</a> or <a [routerLink]="['/register']">sign up</a> to add comments on
-            this article.
+            <a [routerLink]="['/login']">Sign in</a> or
+            <a [routerLink]="['/register']">sign up</a> to add comments on this
+            article.
           }
 
           @for (comment of $comments(); track comment.id) {

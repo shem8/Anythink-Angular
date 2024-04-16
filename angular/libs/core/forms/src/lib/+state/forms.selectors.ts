@@ -1,7 +1,13 @@
-import { ngrxFormsFeature } from './forms.reducer';
+import { ngrxFormsFeature } from "./forms.reducer";
 
-export const { selectNgrxFormsState, selectData, selectErrors, selectStructure, selectTouched, selectValid } =
-  ngrxFormsFeature;
+export const {
+  selectNgrxFormsState,
+  selectData,
+  selectErrors,
+  selectStructure,
+  selectTouched,
+  selectValid,
+} = ngrxFormsFeature;
 
 export const ngrxFormsQuery = {
   selectNgrxFormsState,

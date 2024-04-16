@@ -9,9 +9,18 @@
 
         <cdt-list-errors></cdt-list-errors>
 
-        <cdt-dynamic-form (updateForm)="updateForm($event)" [data$]="data$" [structure$]="structure$">
+        <cdt-dynamic-form
+          (updateForm)="updateForm($event)"
+          [data$]="data$"
+          [structure$]="structure$"
+        >
         </cdt-dynamic-form>
-        <button data-e2e-id="sign-in" (click)="submit()" class="btn btn-lg btn-primary align-self-end" type="submit">
+        <button
+          data-e2e-id="sign-in"
+          (click)="submit()"
+          class="btn btn-lg btn-primary align-self-end"
+          type="submit"
+        >
           Sign in
         </button>
       </div>

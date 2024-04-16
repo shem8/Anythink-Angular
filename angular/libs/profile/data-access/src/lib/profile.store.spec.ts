@@ -1,10 +1,10 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { inject, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from "@angular/common/http/testing";
+import { inject, TestBed } from "@angular/core/testing";
 
-import { ArticleStore } from './article.store';
-import { provideMockStore } from '@ngrx/store/testing';
+import { ArticleStore } from "./article.store";
+import { provideMockStore } from "@ngrx/store/testing";
 
-describe('ArticleStore', () => {
+describe("ArticleStore", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
@@ -12,7 +12,10 @@ describe('ArticleStore', () => {
     });
   });
 
-  it('should be created', inject([ArticleStore], (service: typeof ArticleStore) => {
-    expect(service).toBeTruthy();
-  }));
+  it("should be created", inject(
+    [ArticleStore],
+    (service: typeof ArticleStore) => {
+      expect(service).toBeTruthy();
+    },
+  ));
 });

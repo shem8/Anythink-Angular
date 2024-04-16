@@ -1,4 +1,4 @@
-import { Article, Comment } from '@realworld/core/api-types';
+import { Article, Comment } from "@realworld/core/api-types";
 
 export interface ArticleState {
   data: Article;
@@ -7,19 +7,19 @@ export interface ArticleState {
 
 export const articleInitialState: ArticleState = {
   data: {
-    slug: '',
-    title: '',
-    description: '',
-    body: '',
+    slug: "",
+    title: "",
+    description: "",
+    body: "",
     tagList: [],
-    createdAt: '',
-    updatedAt: '',
+    createdAt: "",
+    updatedAt: "",
     favorited: false,
     favoritesCount: 0,
     author: {
-      username: '',
-      bio: '',
-      image: '',
+      username: "",
+      bio: "",
+      image: "",
       following: false,
       loading: false,
     },

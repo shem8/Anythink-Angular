@@ -1,9 +1,17 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, output, input } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+  output,
+  input,
+} from "@angular/core";
 
 @Component({
-  selector: 'cdt-tags-list',
+  selector: "cdt-tags-list",
   standalone: true,
-  templateUrl: './tags-list.component.html',
+  templateUrl: "./tags-list.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TagsListComponent {

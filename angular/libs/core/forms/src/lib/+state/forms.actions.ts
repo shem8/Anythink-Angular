@@ -1,8 +1,8 @@
-import { Errors } from './forms.interfaces';
-import { props, createActionGroup, emptyProps } from '@ngrx/store';
+import { Errors } from "./forms.interfaces";
+import { props, createActionGroup, emptyProps } from "@ngrx/store";
 
 export const formsActions = createActionGroup({
-  source: 'Forms',
+  source: "Forms",
   events: {
     setData: props<{ data: any }>(),
     updateData: props<{ data: any }>(),

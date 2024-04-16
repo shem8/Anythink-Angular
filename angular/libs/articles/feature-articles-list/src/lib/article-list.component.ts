@@ -1,14 +1,14 @@
-import { AsyncPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
-import { ArticleListItemComponent } from './article-list-item/article-list-item.component';
-import { PagerComponent } from '@realworld/ui/components';
-import { ArticlesListStore } from '@realworld/articles/data-access';
+import { AsyncPipe } from "@angular/common";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+import { Router } from "@angular/router";
+import { ArticleListItemComponent } from "./article-list-item/article-list-item.component";
+import { PagerComponent } from "@realworld/ui/components";
+import { ArticlesListStore } from "@realworld/articles/data-access";
 
 @Component({
-  selector: 'cdt-article-list',
+  selector: "cdt-article-list",
   standalone: true,
-  templateUrl: './article-list.component.html',
+  templateUrl: "./article-list.component.html",
   imports: [ArticleListItemComponent, PagerComponent, AsyncPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -30,7 +30,7 @@ export class ArticleListComponent {
   }
 
   navigateToArticle(slug: string) {
-    this.router.navigate(['/article', slug]);
+    this.router.navigate(["/article", slug]);
   }
 
   setPage(page: number) {

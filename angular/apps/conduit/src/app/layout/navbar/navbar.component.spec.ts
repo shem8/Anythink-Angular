@@ -1,9 +1,9 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
 
-import { NavbarComponent } from './navbar.component';
-import { RouterTestingModule } from '@angular/router/testing';
+import { NavbarComponent } from "./navbar.component";
+import { RouterTestingModule } from "@angular/router/testing";
 
-describe('NavbarComponent', () => {
+describe("NavbarComponent", () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
 
@@ -20,7 +20,7 @@ describe('NavbarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

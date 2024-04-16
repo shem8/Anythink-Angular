@@ -1,13 +1,13 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from "@angular/core/testing";
 
-import { AppComponent } from './app.component';
-import { RouterTestingModule } from '@angular/router/testing';
-import { NavbarComponent } from './layout/navbar/navbar.component';
-import { StoreModule } from '@ngrx/store';
-import { LocalStorageJwtService } from '@realworld/auth/data-access';
-import { provideMockStore } from '@ngrx/store/testing';
+import { AppComponent } from "./app.component";
+import { RouterTestingModule } from "@angular/router/testing";
+import { NavbarComponent } from "./layout/navbar/navbar.component";
+import { StoreModule } from "@ngrx/store";
+import { LocalStorageJwtService } from "@realworld/auth/data-access";
+import { provideMockStore } from "@ngrx/store/testing";
 
-describe('AppComponent', () => {
+describe("AppComponent", () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
@@ -25,7 +25,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,12 +1,12 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { Field } from '../../+state/forms.interfaces';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
+import { Field } from "../../+state/forms.interfaces";
+import { FormGroup, ReactiveFormsModule } from "@angular/forms";
 
 @Component({
-  selector: 'cdt-input',
+  selector: "cdt-input",
   standalone: true,
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css'],
+  templateUrl: "./input.component.html",
+  styleUrls: ["./input.component.css"],
   imports: [ReactiveFormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

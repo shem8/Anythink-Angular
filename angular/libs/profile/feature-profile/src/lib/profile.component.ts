@@ -1,14 +1,19 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { AsyncPipe, NgClass } from '@angular/common';
-import { AuthStore } from '@realworld/auth/data-access';
-import { ProfileStore } from '@realworld/profile/data-access';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+} from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { AsyncPipe, NgClass } from "@angular/common";
+import { AuthStore } from "@realworld/auth/data-access";
+import { ProfileStore } from "@realworld/profile/data-access";
 
 @Component({
   standalone: true,
-  selector: 'cdt-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
+  selector: "cdt-profile",
+  templateUrl: "./profile.component.html",
+  styleUrls: ["./profile.component.css"],
   imports: [RouterModule, NgClass, AsyncPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

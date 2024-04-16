@@ -4,11 +4,15 @@
       <img [src]="article().author.image" />
     </a>
     <div class="info">
-      <a data-e2e-id="article-author" class="author" [routerLink]="['/profile', article().author.username]">
+      <a
+        data-e2e-id="article-author"
+        class="author"
+        [routerLink]="['/profile', article().author.username]"
+      >
         {{ article().author.username }}
       </a>
       <span class="date">
-        {{ article().createdAt | date: 'longDate' }}
+        {{ article().createdAt | date: "longDate" }}
       </span>
     </div>
     <button

@@ -1,15 +1,20 @@
-import { AsyncPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { AuthStore, LocalStorageJwtService } from '@realworld/auth/data-access';
-import { filter, take } from 'rxjs/operators';
-import { NavbarComponent } from './layout/navbar/navbar.component';
+import { AsyncPipe } from "@angular/common";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  inject,
+} from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { AuthStore, LocalStorageJwtService } from "@realworld/auth/data-access";
+import { filter, take } from "rxjs/operators";
+import { NavbarComponent } from "./layout/navbar/navbar.component";
 
 @Component({
-  selector: 'cdt-root',
+  selector: "cdt-root",
   standalone: true,
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
   imports: [NavbarComponent, RouterModule, AsyncPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

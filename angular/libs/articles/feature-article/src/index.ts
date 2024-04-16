@@ -1,2 +1,2 @@
-export * from './lib/article.component';
-export * from './lib/article.routes';
+export * from "./lib/article.component";
+export * from "./lib/article.routes";

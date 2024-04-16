@@ -8,7 +8,7 @@
     "start": "nx run conduit:serve --port=${PORT} --host 0.0.0.0 --disable-host-check",
     "build": "ng build",
     "test": "ng test",
-    "lint": "nx workspace-lint && ng lint",
+    "lint": "ng lint && prettier --write .",
     "e2e": "ng e2e",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",

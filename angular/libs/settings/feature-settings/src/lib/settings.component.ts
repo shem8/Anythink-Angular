@@ -1,51 +1,64 @@
-import { DynamicFormComponent, Field, formsActions, ListErrorsComponent, ngrxFormsQuery } from '@realworld/core/forms';
-import { ChangeDetectionStrategy, Component, effect, inject, OnInit, untracked } from '@angular/core';
-import { Validators } from '@angular/forms';
-import { AuthStore } from '@realworld/auth/data-access';
-import { SettingsStoreService } from './settings.store';
-import { Store } from '@ngrx/store';
+import {
+  DynamicFormComponent,
+  Field,
+  formsActions,
+  ListErrorsComponent,
+  ngrxFormsQuery,
+} from "@realworld/core/forms";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+  OnInit,
+  untracked,
+} from "@angular/core";
+import { Validators } from "@angular/forms";
+import { AuthStore } from "@realworld/auth/data-access";
+import { SettingsStoreService } from "./settings.store";
+import { Store } from "@ngrx/store";
 
 const structure: Field[] = [
   {
-    type: 'INPUT',
-    name: 'image',
-    placeholder: 'URL of profile picture',
+    type: "INPUT",
+    name: "image",
+    placeholder: "URL of profile picture",
     validator: [],
   },
   {
-    type: 'INPUT',
-    name: 'username',
-    placeholder: 'Your Name',
+    type: "INPUT",
+    name: "username",
+    placeholder: "Your Name",
     validator: [Validators.required],
   },
   {
-    type: 'TEXTAREA',
-    name: 'bio',
-    placeholder: 'Short bio about you',
+    type: "TEXTAREA",
+    name: "bio",
+    placeholder: "Short bio about you",
     validator: [],
   },
   {
-    type: 'INPUT',
-    name: 'email',
-    placeholder: 'Email',
+    type: "INPUT",
+    name: "email",
+    placeholder: "Email",
     validator: [Validators.required],
   },
   {
-    type: 'INPUT',
-    name: 'password',
-    placeholder: 'New Password',
+    type: "INPUT",
+    name: "password",
+    placeholder: "New Password",
     validator: [Validators.required],
     attrs: {
-      type: 'password',
+      type: "password",
     },
   },
 ];
 
 @Component({
   standalone: true,
-  selector: 'cdt-settings',
-  templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.css'],
+  selector: "cdt-settings",
+  templateUrl: "./settings.component.html",
+  styleUrls: ["./settings.component.css"],
   imports: [DynamicFormComponent, ListErrorsComponent],
   providers: [SettingsStoreService],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -61,7 +74,11 @@ export class SettingsComponent implements OnInit {
   readonly fillInForm = effect(() => {
     const isLoggedIn = this.authStore.loggedIn();
     if (isLoggedIn) {
-      untracked(() => this.store.dispatch(formsActions.setData({ data: this.authStore.user() })));
+      untracked(() =>
+        this.store.dispatch(
+          formsActions.setData({ data: this.authStore.user() }),
+        ),
+      );
     }
   });
 

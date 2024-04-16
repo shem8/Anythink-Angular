@@ -1,8 +1,13 @@
-import { HttpErrorResponse, HttpEvent, HttpHandlerFn, HttpRequest } from '@angular/common/http';
-import { inject } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { ErrorHandlerStore } from './error-handler.store';
+import {
+  HttpErrorResponse,
+  HttpEvent,
+  HttpHandlerFn,
+  HttpRequest,
+} from "@angular/common/http";
+import { inject } from "@angular/core";
+import { Observable, throwError } from "rxjs";
+import { catchError } from "rxjs/operators";
+import { ErrorHandlerStore } from "./error-handler.store";
 
 export const errorHandlingInterceptor = (
   request: HttpRequest<any>,

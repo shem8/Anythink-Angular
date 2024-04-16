@@ -1,4 +1,4 @@
-import { Profile } from '@realworld/core/api-types';
+import { Profile } from "@realworld/core/api-types";
 
 export interface SingleCommentResponse {
   comment: Comment;

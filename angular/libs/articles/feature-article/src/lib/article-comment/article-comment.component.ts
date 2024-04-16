@@ -1,13 +1,18 @@
-import { Component, ChangeDetectionStrategy, input, output } from '@angular/core';
-import { Article, User } from '@realworld/core/api-types';
-import { Comment } from '@realworld/articles/data-access';
-import { RouterModule } from '@angular/router';
-import { DatePipe } from '@angular/common';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  input,
+  output,
+} from "@angular/core";
+import { Article, User } from "@realworld/core/api-types";
+import { Comment } from "@realworld/articles/data-access";
+import { RouterModule } from "@angular/router";
+import { DatePipe } from "@angular/common";
 
 @Component({
-  selector: 'cdt-article-comment',
+  selector: "cdt-article-comment",
   standalone: true,
-  templateUrl: './article-comment.component.html',
+  templateUrl: "./article-comment.component.html",
   imports: [DatePipe, RouterModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

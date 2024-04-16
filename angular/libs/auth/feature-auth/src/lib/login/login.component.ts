@@ -1,33 +1,45 @@
-import { DynamicFormComponent, Field, formsActions, ListErrorsComponent, ngrxFormsQuery } from '@realworld/core/forms';
-import { ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { Validators } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { AuthStore } from '@realworld/auth/data-access';
-import { Store } from '@ngrx/store';
+import {
+  DynamicFormComponent,
+  Field,
+  formsActions,
+  ListErrorsComponent,
+  ngrxFormsQuery,
+} from "@realworld/core/forms";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnDestroy,
+  OnInit,
+} from "@angular/core";
+import { Validators } from "@angular/forms";
+import { RouterModule } from "@angular/router";
+import { AuthStore } from "@realworld/auth/data-access";
+import { Store } from "@ngrx/store";
 
 const structure: Field[] = [
   {
-    type: 'INPUT',
-    name: 'email',
-    placeholder: 'Email',
+    type: "INPUT",
+    name: "email",
+    placeholder: "Email",
     validator: [Validators.required],
   },
   {
-    type: 'INPUT',
-    name: 'password',
-    placeholder: 'Password',
+    type: "INPUT",
+    name: "password",
+    placeholder: "Password",
     validator: [Validators.required],
     attrs: {
-      type: 'password',
+      type: "password",
     },
   },
 ];
 
 @Component({
-  selector: 'cdt-login',
+  selector: "cdt-login",
   standalone: true,
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.css"],
   imports: [ListErrorsComponent, DynamicFormComponent, RouterModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

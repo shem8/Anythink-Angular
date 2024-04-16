@@ -6,16 +6,16 @@ import {
   OnDestroy,
   OnInit,
   inject,
-} from '@angular/core';
-import { Store } from '@ngrx/store';
-import { ngrxFormsQuery } from '../+state/forms.selectors';
-import { formsActions } from '../..';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+} from "@angular/core";
+import { Store } from "@ngrx/store";
+import { ngrxFormsQuery } from "../+state/forms.selectors";
+import { formsActions } from "../..";
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 
 @Component({
-  selector: 'cdt-list-errors',
+  selector: "cdt-list-errors",
   standalone: true,
-  templateUrl: './list-errors.component.html',
+  templateUrl: "./list-errors.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListErrorsComponent implements OnInit, OnDestroy {

@@ -17,6 +17,11 @@
     "enableResourceInlining": true,
     "_enabledBlockTypes": ["if", "for", "switch", "defer"]
   },
-  "exclude": ["src/test-setup.ts", "**/*.spec.ts", "**/*.test.ts", "jest.config.ts"],
+  "exclude": [
+    "src/test-setup.ts",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "jest.config.ts"
+  ],
   "include": ["**/*.ts"]
 }

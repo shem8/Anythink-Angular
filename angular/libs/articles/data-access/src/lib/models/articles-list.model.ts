@@ -1,4 +1,4 @@
-import { Article } from '@realworld/core/api-types';
+import { Article } from "@realworld/core/api-types";
 
 export interface ArticlesListState {
   listConfig: ArticlesListConfig;
@@ -19,7 +19,7 @@ export interface Filters {
   offset?: number;
 }
 
-export type ListType = 'ALL' | 'FEED';
+export type ListType = "ALL" | "FEED";
 
 export interface Articles {
   entities: Article[];
@@ -28,7 +28,7 @@ export interface Articles {
 
 export const articlesListInitialState: ArticlesListState = {
   listConfig: {
-    type: 'ALL',
+    type: "ALL",
     currentPage: 1,
     filters: {
       limit: 10,

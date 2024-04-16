@@ -1,14 +1,14 @@
 <div class="home-page">
-    <div class="banner text-white">
-      <div class="container p-4 text-center">
-        <img src="assets/logo.png"/>
-        <div>
-          <span>A place to </span>
-          <span id="get-part">get</span>
-          <span> the cool stuff.</span>
-        </div>
+  <div class="banner text-white">
+    <div class="container p-4 text-center">
+      <img src="assets/logo.png" />
+      <div>
+        <span>A place to </span>
+        <span id="get-part">get</span>
+        <span> the cool stuff.</span>
       </div>
     </div>
+  </div>
 
   <div class="container page">
     <div class="row">
@@ -17,7 +17,13 @@
           @if ({ listConfig: $listConfig() }; as model) {
             <ul class="nav nav-pills outline-active">
               <li class="nav-item">
-                <a [ngClass]="{ active: model.listConfig.type === 'FEED' }" class="nav-link" (click)="setListTo('FEED')"
+                <a
+                  [ngClass]="{
+                    active: model.listConfig.type === 'FEED',
+                    disabled: !$isLoggedIn()
+                  }"
+                  class="nav-link"
+                  (click)="setListTo('FEED')"
                   >Your Feed</a
                 >
               </li>
@@ -25,7 +31,9 @@
                 <a
                   data-e2e-id="global-feed"
                   [ngClass]="{
-                    active: model.listConfig.type === 'ALL' && !model.listConfig.filters.tag
+                    active:
+                      model.listConfig.type === 'ALL' &&
+                      !model.listConfig.filters.tag
                   }"
                   class="nav-link"
                   (click)="setListTo('ALL')"
@@ -48,7 +56,10 @@
       <div class="col-md-3">
         <div class="sidebar">
           @defer (when !!(tags$ | async)?.length) {
-            <cdt-tags-list (setListTag)="setListTag($event)" [tags]="(tags$ | async) ?? []"></cdt-tags-list>
+            <cdt-tags-list
+              (setListTag)="setListTag($event)"
+              [tags]="(tags$ | async) ?? []"
+            ></cdt-tags-list>
           } @placeholder {
             loading...
           }

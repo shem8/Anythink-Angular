@@ -1,23 +1,27 @@
-import { Routes } from '@angular/router';
-import { ArticleListComponent } from '@realworld/articles/feature-articles-list/src';
-import { authGuard } from '@realworld/auth/data-access';
-import { profileArticlesResolver, profileFavoritesResolver, profileResolver } from '@realworld/profile/data-access';
-import { ProfileComponent } from './profile.component';
+import { Routes } from "@angular/router";
+import { ArticleListComponent } from "@realworld/articles/feature-articles-list/src";
+import { authGuard } from "@realworld/auth/data-access";
+import {
+  profileArticlesResolver,
+  profileFavoritesResolver,
+  profileResolver,
+} from "@realworld/profile/data-access";
+import { ProfileComponent } from "./profile.component";
 
 export const PROFILE_ROUTES: Routes = [
   {
-    path: ':username',
+    path: ":username",
     component: ProfileComponent,
     resolve: { profileResolver },
     canActivate: [authGuard],
     children: [
       {
-        path: '',
+        path: "",
         component: ArticleListComponent,
         resolve: { profileArticlesResolver },
       },
       {
-        path: 'favorites',
+        path: "favorites",
         component: ArticleListComponent,
         resolve: { profileFavoritesResolver },
       },

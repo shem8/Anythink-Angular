@@ -1,2 +1,2 @@
-import * as process from 'process';
-window['process'] = process;
+import * as process from "process";
+window["process"] = process;

@@ -1,15 +1,18 @@
-import { TestBed } from '@angular/core/testing';
-import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { profileFavoritesResolver } from './profile-favorites-resolver';
-import { cold } from 'jasmine-marbles';
-import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { articleListActions, articleListInitialState } from '@realworld/articles/data-access';
+import { TestBed } from "@angular/core/testing";
+import { MockStore, provideMockStore } from "@ngrx/store/testing";
+import { profileFavoritesResolver } from "./profile-favorites-resolver";
+import { cold } from "jasmine-marbles";
+import { ActivatedRouteSnapshot, RouterStateSnapshot } from "@angular/router";
+import {
+  articleListActions,
+  articleListInitialState,
+} from "@realworld/articles/data-access";
 
 const mockRoute: ActivatedRouteSnapshot = {
-  parent: { params: { username: 'stef' } },
+  parent: { params: { username: "stef" } },
 } as unknown as ActivatedRouteSnapshot;
 
-describe('profileFavoritesResolver', () => {
+describe("profileFavoritesResolver", () => {
   let store: MockStore;
 
   beforeEach(() => {
@@ -20,11 +23,12 @@ describe('profileFavoritesResolver', () => {
     store = TestBed.inject(MockStore);
   });
 
-  it('should return `true` and dispatch articleListActions.setListConfig action', () => {
-    const dispatchSpy = jest.spyOn(store, 'dispatch');
+  it("should return `true` and dispatch articleListActions.setListConfig action", () => {
+    const dispatchSpy = jest.spyOn(store, "dispatch");
 
     const result = TestBed.runInInjectionContext(
-      () => profileFavoritesResolver(mockRoute, {} as RouterStateSnapshot) as any,
+      () =>
+        profileFavoritesResolver(mockRoute, {} as RouterStateSnapshot) as any,
     );
     expect(dispatchSpy).toHaveBeenCalledWith(
       articleListActions.setListConfig({
@@ -32,11 +36,11 @@ describe('profileFavoritesResolver', () => {
           ...articleListInitialState.listConfig,
           filters: {
             ...articleListInitialState.listConfig.filters,
-            favorited: 'stef',
+            favorited: "stef",
           },
         },
       }),
     );
-    expect(result).toBeObservable(cold('(a|)', { a: true }));
+    expect(result).toBeObservable(cold("(a|)", { a: true }));
   });
 });

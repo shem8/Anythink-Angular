@@ -1,17 +1,17 @@
-import { signalStore, withState, withMethods, patchState } from '@ngrx/signals';
-import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { AuthState, authInitialState, initialUserValue } from './auth.model';
-import { inject } from '@angular/core';
-import { AuthService } from './services/auth.service';
-import { exhaustMap, pipe, switchMap, tap } from 'rxjs';
-import { concatLatestFrom, tapResponse } from '@ngrx/operators';
-import { Store } from '@ngrx/store';
-import { formsActions, ngrxFormsQuery } from '@realworld/core/forms';
-import { LocalStorageJwtService } from './services/local-storage-jwt.service';
-import { Router } from '@angular/router';
+import { signalStore, withState, withMethods, patchState } from "@ngrx/signals";
+import { rxMethod } from "@ngrx/signals/rxjs-interop";
+import { AuthState, authInitialState, initialUserValue } from "./auth.model";
+import { inject } from "@angular/core";
+import { AuthService } from "./services/auth.service";
+import { exhaustMap, pipe, switchMap, tap } from "rxjs";
+import { concatLatestFrom, tapResponse } from "@ngrx/operators";
+import { Store } from "@ngrx/store";
+import { formsActions, ngrxFormsQuery } from "@realworld/core/forms";
+import { LocalStorageJwtService } from "./services/local-storage-jwt.service";
+import { Router } from "@angular/router";
 
 export const AuthStore = signalStore(
-  { providedIn: 'root' },
+  { providedIn: "root" },
   withState<AuthState>(authInitialState),
   withMethods(
     (
@@ -36,9 +36,12 @@ export const AuthStore = signalStore(
                 next: ({ user }) => {
                   patchState(store, { user, loggedIn: true });
                   localStorageService.setItem(user.token);
-                  router.navigateByUrl('/');
+                  router.navigateByUrl("/");
                 },
-                error: ({ error }) => reduxStore.dispatch(formsActions.setErrors({ errors: error.errors })),
+                error: ({ error }) =>
+                  reduxStore.dispatch(
+                    formsActions.setErrors({ errors: error.errors }),
+                  ),
               }),
             ),
           ),
@@ -53,9 +56,12 @@ export const AuthStore = signalStore(
                 next: ({ user }) => {
                   patchState(store, { user, loggedIn: true });
                   localStorageService.setItem(user.token);
-                  router.navigateByUrl('/');
+                  router.navigateByUrl("/");
                 },
-                error: ({ error }) => reduxStore.dispatch(formsActions.setErrors({ errors: error.errors })),
+                error: ({ error }) =>
+                  reduxStore.dispatch(
+                    formsActions.setErrors({ errors: error.errors }),
+                  ),
               }),
             ),
           ),
@@ -64,7 +70,7 @@ export const AuthStore = signalStore(
       logout: () => {
         patchState(store, { user: initialUserValue, loggedIn: false });
         localStorageService.removeItem();
-        router.navigateByUrl('login');
+        router.navigateByUrl("login");
       },
     }),
   ),
