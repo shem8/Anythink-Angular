@@ -31,7 +31,6 @@ services:
     working_dir: /usr/src
     volumes:
       - ./:/usr/src/
-      - /usr/src/angular/node_modules
     ports:
       - "3001:3001"
     depends_on:

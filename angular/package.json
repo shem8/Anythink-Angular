@@ -30,14 +30,14 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "17.3.1",
-    "@angular/common": "17.3.1",
+    "@angular/common": "^17.3.4",
     "@angular/compiler": "17.3.1",
     "@angular/core": "17.3.1",
     "@angular/forms": "17.3.1",
     "@angular/platform-browser": "17.3.1",
     "@angular/platform-browser-dynamic": "17.3.1",
     "@angular/router": "17.3.1",
-    "@ngrx/component-store": "17.1.1",
+    "@ngrx/component-store": "^17.2.0",
     "@ngrx/effects": "17.1.1",
     "@ngrx/router-store": "17.1.1",
     "@ngrx/signals": "17.1.1",
@@ -49,7 +49,7 @@
     "eslint-plugin-ngrx": "2.1.4",
     "marked": "5.0.1",
     "rxjs": "7.8.1",
-    "tslib": "2.6.2",
+    "tslib": "^2.6.2",
     "zone.js": "0.14.4"
   },
   "devDependencies": {
