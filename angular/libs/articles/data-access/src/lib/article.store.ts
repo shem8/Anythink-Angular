@@ -88,17 +88,15 @@ export const ArticleStore = signalStore(
       deleteComment: rxMethod<{ commentId: number; slug: string }>(
         pipe(
           switchMap(({ commentId, slug }) =>
-            articlesService
-              .deleteComment(commentId, slug)
-              .pipe(
-                tap(() =>
-                  patchState(store, {
-                    comments: store
-                      .comments()
-                      .filter((item) => item.id !== commentId),
-                  }),
-                ),
+            articlesService.deleteComment(commentId, slug).pipe(
+              tap(() =>
+                patchState(store, {
+                  comments: store
+                    .comments()
+                    .filter((item) => item.id !== commentId),
+                }),
               ),
+            ),
           ),
         ),
       ),
